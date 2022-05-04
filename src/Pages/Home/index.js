@@ -19,7 +19,7 @@ export default function Home({ history }) {
 
   function handleAdd(id) {
     dispatch(addReserveRequest(id));
-
+    //retirar depois
     history.push("/reservas");
   }
 
