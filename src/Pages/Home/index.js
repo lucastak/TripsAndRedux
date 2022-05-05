@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addReserveRequest } from "../../store/modules/reserve/actions";
 import api from "../../services/api";
 import "./styles.css";
 
-export default function Home({ history }) {
+export default function Home() {
+  const history = useHistory();
   const dispatch = useDispatch();
   const [trips, setStrips] = useState([]);
 
@@ -19,7 +21,6 @@ export default function Home({ history }) {
 
   function handleAdd(id) {
     dispatch(addReserveRequest(id));
-    //retirar depois
     history.push("/reservas");
   }
 
